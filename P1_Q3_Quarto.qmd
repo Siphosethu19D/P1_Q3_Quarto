@@ -8,11 +8,10 @@ Quarto enables you to weave together content and executable code into a finished
 
 ```{r}
 x_value=cars$speed
-x<-matrix(x_value,nrow=50,ncol=1)
+x<-matrix(x_value,nrow=50,ncol=1)  #finding vector x
 y_value=cars$dist
-y<-matrix(y_value,nrow=50,ncol=1)
+y<-matrix(y_value,nrow=50,ncol=1) #finding vector y
 x_trans=t(x)               #finding transporse of x
-d= x_trans %*% x           #finding matrix multiplication 
 
 M <- matrix(1,nrow=50,ncol=1)
 Mx <- cbind(M,x)
