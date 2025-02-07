@@ -20,3 +20,4 @@ e<- solve(t(Mx)%*%Mx)%*%(t(Mx)%*%y)
 
 ```
 
+usethis::use_git()
