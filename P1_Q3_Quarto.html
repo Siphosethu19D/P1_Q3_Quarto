@@ -99,17 +99,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x_value<span class="ot">=</span>cars<span class="sc">$</span>speed</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">matrix</span>(x_value,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">matrix</span>(x_value,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>)  <span class="co">#finding vector x</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y_value<span class="ot">=</span>cars<span class="sc">$</span>dist</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">matrix</span>(y_value,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x_trans<span class="ot">=</span><span class="fu">t</span>(x)               <span class="co">#finding transporse of x</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>d<span class="ot">=</span> x_trans <span class="sc">%*%</span> x           <span class="co">#finding matrix multiplication </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Mx <span class="ot">&lt;-</span> <span class="fu">cbind</span>(M,x)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>e<span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(Mx)<span class="sc">%*%</span>Mx)<span class="sc">%*%</span>(<span class="fu">t</span>(Mx)<span class="sc">%*%</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">matrix</span>(y_value,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>) <span class="co">#finding vector y</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>,<span class="at">nrow=</span><span class="dv">50</span>,<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Mx <span class="ot">&lt;-</span> <span class="fu">cbind</span>(M,x)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>e<span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(Mx)<span class="sc">%*%</span>Mx)<span class="sc">%*%</span>(<span class="fu">t</span>(Mx)<span class="sc">%*%</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>usethis::use_git()</p>
 </section>
 
 </main>
