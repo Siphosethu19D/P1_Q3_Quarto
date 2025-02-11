@@ -1,0 +1,60 @@
+---
+title: "Day4_Practical.qmd"
+editor: visual
+---
+```{r}
+#Question1
+if (!requireNamespace("tidyverse",quietly=TRUE)){
+  install.packages("tidyverse")
+}
+library(tidyverse)
+
+if (!requireNamespace("nycflights13",quietly=TRUE)){
+  install.packages("nycflights13")
+}
+library(nycflights13)
+glimpse(flights)
+
+
+# Question2
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+library(dplyr)
+data(flights, package = "nycflights13")
+flights
+flight1 <- flights[flights$month == 1, ]
+carrier_vec <- unique(flight1$carrier)
+carrier_dist_vec_mean <- numeric(length(carrier_vec))
+carrier_dist_vec_sd <- numeric(length(carrier_vec))
+for (i in seq_along(carrier_vec)) {
+  carrier_dist_vec_mean[i] <- mean(
+    flight1$distance[flight1$carrier == carrier_vec[i]]
+  )
+  carrier_dist_vec_sd[i] <- sd(
+    flight1$distance[flight1$carrier == carrier_vec[i]]
+  )
+}
+dist_tbl <- tibble(
+  carrier = carrier_vec,
+  mean_distance = carrier_dist_vec_mean,
+  sd_distance = carrier_dist_vec_sd
+)
+dist_tbl[order(dist_tbl$mean_distance), ]
+
+
+
+
+#Question5
+n_total=count(flights)
+flights2=filter(flights,dep_delay>0,arr_delay<=0)
+n=count(flights2)
+n
+prop_delay=n/(n_total)
+prop_delay
+
+#Question6
+airlines
+#Question7
+
+```

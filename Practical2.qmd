@@ -15,10 +15,10 @@ customLowess <- function(x, yi, f = 0.25) {
   
   smoothed <- lowess(x, yi, f = f)
 return(smoothed)}
- customLowess(x,yi,f=0.25)
+customLowess(x,yi,f=0.25)
 
 #Question3
-  lowess(x,yi,0.25,iter=0,delta=0.01*diff(range(x)))
+  (lowess(x,yi,0.25,iter=0,delta=0.01*diff(range(x))))
   plot(x,yi)
 
 ```

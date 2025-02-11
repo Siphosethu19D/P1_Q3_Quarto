@@ -1,0 +1,60 @@
+---
+title: "P1_Q3_Quarto"
+format: html
+---
+
+
+```{r}
+#Question1
+airquality
+m_rows<-airquality[rowSums(is.na(airquality))>0,] #finding rows with missing values
+m_rows
+
+#Question2
+airquality
+data_cleaned <- na.omit(airquality) #cleaning the data by removing Na
+mean(data_cleaned$Ozone)     #finding the mean
+mean(data_cleaned$Temp)
+min(data_cleaned$Ozone)
+min(data_cleaned$Temp)
+max(data_cleaned$Ozone)
+max(data_cleaned$Temp)
+sd(data_cleaned$Ozone)
+sd(data_cleaned$Temp)
+
+
+#Question 3
+x_value=cars$speed
+x<-matrix(x_value,nrow=50,ncol=1)  #finding vector x
+x
+y_value=cars$dist
+y<-matrix(y_value,nrow=50,ncol=1) #finding vector y
+y
+M <- matrix(1,nrow=50,ncol=1)
+Mx <- cbind(M,x)                 #creating matrix X to find transporse of x
+e<- solve(t(Mx)%*%Mx)%*%(t(Mx)%*%y) #finding B estimates
+e
+
+
+#Question 4 
+m1=lm(dist~speed , data=cars)
+summary(m1)
+#Question5
+beta0=-17.5791
+beta1=3.9324
+n <- length(x)
+y_pred <- beta0 + beta1 * x
+residuals <- y - y_pred
+se_beta0 <- sqrt(sum(residuals^2) / (n - 2))
+
+se_beta1 <- se_beta0 / sqrt(sum((x - mean(x))^2))
+se_beta1
+tvalue_beta0<- (beta0/se_beta0)
+tvalue_beta1<- (beta1/se_beta1)
+
+```
+
+
+ #Question 4 
+m1=lm(dist~speed , data=cars)
+summary(m1)
